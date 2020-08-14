@@ -27,6 +27,18 @@ class App extends Component {
     })
   }
 
+  addLike = (picture) => {
+    console.log('in add like');
+    let id = picture.id
+    console.log(id);
+    axios.put(`/like/${id}`)
+    .then(response => {
+      this.getGallery();
+    }).catch(error => {
+      console.log(error);
+    })
+  }
+
 
   render() {
     return (
@@ -35,7 +47,7 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br/>
-        <GalleryList galleryList={this.state.galleryList} />
+        <GalleryList galleryList={this.state.galleryList} addLike={this.addLike}/>
       </div>
     );
   }
