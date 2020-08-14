@@ -30,6 +30,7 @@ To practice passing values through `props` in React, you will build the gallery 
 - `App` - represents the overall application or site 
 - `GalleryList` - represents the gallery of images. By componentizing, we could reuse this component in different applications
 - `GalleryItem` - represents a single image in the gallery with the ability to click the image to toggle between image and description as well as the ability to like an image.
+- update the readme
 
 ### Wireframes
 
