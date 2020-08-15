@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './GalleryItem.css'
+import './GalleryItem.css';
+import './bootstrap.css'
 
 
 class GalleryItem extends Component {
@@ -24,7 +25,8 @@ class GalleryItem extends Component {
                     : <div className='photoDesc' onClick={this.flipView}>
                         <p className='descText'>{this.props.picture.description}</p></div>}
                 <p>This photo has {this.props.picture.likes} likes.</p>
-                <button onClick={() => this.props.addLike(this.props.picture)}>Like</button>
+                <button className="btn btn-secondary btn-sm" 
+                onClick={() => this.props.addLike(this.props.picture)}>Like</button>
                 <br />
             </div>
         );
