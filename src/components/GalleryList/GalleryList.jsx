@@ -15,7 +15,8 @@ class GalleryList extends Component {
         return (
             <GalleryItem key={picture.id} 
             picture={picture}
-            addLike={this.props.addLike}/>
+            addLike={this.props.addLike}
+            deleteImage={this.props.deleteImage}/>
         )
     })}
 

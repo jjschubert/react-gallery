@@ -27,6 +27,8 @@ class GalleryItem extends Component {
                 <p>This photo has {this.props.picture.likes} likes.</p>
                 <button className="btn btn-secondary btn-sm" 
                 onClick={() => this.props.addLike(this.props.picture)}>Like</button>
+                 <button className="btn btn-danger btn-sm" 
+                onClick={() => this.props.deleteImage(this.props.picture.id)}>Delete</button>
                 <br />
             </div>
         );

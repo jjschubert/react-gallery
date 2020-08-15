@@ -52,6 +52,17 @@ class App extends Component {
     })
   }
 
+  deleteImage = (id) => {
+    console.log('ready to delete', id);
+    //send delete request to server
+  //   axios.delete(`/gallery/${id}`)
+  //   .then((response) => {
+  //     this.getGallery();
+  //   }).catch((error) => {
+  //     console.log(error);
+  //   })
+  }
+
   render() {
     return (
       <div className="App">
@@ -60,7 +71,9 @@ class App extends Component {
         </header>
         <br/>
         <GalleryForm addImage={this.addImage}/>
-        <GalleryList galleryList={this.state.galleryList} addLike={this.addLike}/>
+        <GalleryList galleryList={this.state.galleryList} 
+        addLike={this.addLike}
+        deleteImage={this.deleteImage}/>
       </div>
     );
   }
