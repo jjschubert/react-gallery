@@ -1,5 +1,5 @@
 const galleryItems = [
-    { id: 1, path: 'images/redwoods.jpeg', description: 'Friend trip to Redwoods NP this February.', likes: 0 },
+    { id: 1, path: 'images/redwoods.jpeg', description: 'Friend trip to Redwoods National Park this February.', likes: 0 },
     { id: 2, path: 'images/bowl.jpeg', description: 'A bowl I made!', likes: 0 },
     { id: 3, path: 'images/cascade.jpeg', description: 'My husband and I take an annual North Shore camping trip', likes: 0 },
     { id: 4, path: 'images/colorado.jpeg', description: 'Friend trip to Colorado in 2018', likes: 0 },
