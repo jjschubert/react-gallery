@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './GalleryItem.css';
-import './bootstrap.css'
+import { Button } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
 
 
 class GalleryItem extends Component {
@@ -21,14 +23,16 @@ class GalleryItem extends Component {
         return (
             <div className='gallery-block'>
                 {this.state.isPhoto ?
-                    <img src={this.props.picture.path} onClick={this.flipView} alt={this.props.picture.description}/>
+                    <img src={this.props.picture.path} onClick={this.flipView} alt={this.props.picture.description} />
                     : <div className='photoDesc' onClick={this.flipView}>
                         <p className='descText'>{this.props.picture.description}</p></div>}
                 <p>This photo has {this.props.picture.likes} likes.</p>
-                <button className="btn btn-secondary btn-sm" 
-                onClick={() => this.props.addLike(this.props.picture)}>Like</button>
-                 <button className="btn btn-danger btn-sm" 
-                onClick={() => this.props.deleteImage(this.props.picture.id)}>Delete</button>
+                <Button variant="contained" color="primary" size="small" disableElevation
+                    onClick={() => this.props.addLike(this.props.picture)}>Like</Button>
+
+                <IconButton aria-label="delete" onClick={() => this.props.deleteImage(this.props.picture.id)}>
+                    <DeleteIcon />
+                </IconButton>
                 <br />
             </div>
         );

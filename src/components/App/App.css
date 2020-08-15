@@ -4,10 +4,9 @@
 
 .App-header {
   background-color:#004d4d;
-  height: 70px;
+  height: 95px;
   padding: 20px;
   color: white;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .App-title {
@@ -18,7 +17,7 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#form {
+  background-color: #f0f5f5;
+  height: 85px;
 }

@@ -3,6 +3,8 @@ import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList'
 import GalleryForm from '../GalleryForm/GalleryForm.jsx'
+import Divider from '@material-ui/core/Divider';
+import Typography from '@material-ui/core/Typography';
 
 class App extends Component {
 
@@ -18,14 +20,14 @@ class App extends Component {
     console.log('getGallery running');
 
     axios.get('/gallery')
-    .then(response => {
-      console.log(response.data);
-      this.setState({
-        galleryList: response.data
+      .then(response => {
+        console.log(response.data);
+        this.setState({
+          galleryList: response.data
+        })
+      }).catch(error => {
+        alert('error in get!')
       })
-    }).catch(error => {
-      alert('error in get!')
-    })
   }
 
   addLike = (picture) => {
@@ -33,11 +35,11 @@ class App extends Component {
     let id = picture.id
     console.log(id);
     axios.put(`/gallery/like/${id}`)
-    .then(response => {
-      this.getGallery();
-    }).catch(error => {
-      console.log(error);
-    })
+      .then(response => {
+        this.getGallery();
+      }).catch(error => {
+        console.log(error);
+      })
   }
 
   addImage = (newImage) => {
@@ -45,35 +47,46 @@ class App extends Component {
     console.log(newImage);
     //send to server
     axios.post('/gallery', newImage)
-    .then(response => {
-      this.getGallery();
-    }).catch(error => {
-      console.log('post error', error);
-    })
+      .then(response => {
+        this.getGallery();
+      }).catch(error => {
+        console.log('post error', error);
+      })
   }
 
   deleteImage = (id) => {
     console.log('ready to delete', id);
     // send delete request to server
     axios.delete(`/gallery/${id}`)
-    .then((response) => {
-      this.getGallery();
-    }).catch((error) => {
-      console.log(error);
-    })
+      .then((response) => {
+        this.getGallery();
+      }).catch((error) => {
+        console.log(error);
+      })
   }
 
   render() {
     return (
       <div className="App">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         <header className="App-header">
-          <h1 className="App-title">Gallery of my life</h1>
+
+          <Typography variant="h2">
+            Gallery of My Life
+      </Typography>
         </header>
-        <br/>
-        <GalleryForm addImage={this.addImage}/>
-        <GalleryList galleryList={this.state.galleryList} 
-        addLike={this.addLike}
-        deleteImage={this.deleteImage}/>
+
+      <div id="form">
+        <br />
+        <GalleryForm addImage={this.addImage} />
+        <br />
+        </div>
+
+
+        <Divider variant="middle" />
+        <GalleryList galleryList={this.state.galleryList}
+          addLike={this.addLike}
+          deleteImage={this.deleteImage} />
       </div>
     );
   }
