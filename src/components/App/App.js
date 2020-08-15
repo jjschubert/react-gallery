@@ -54,13 +54,13 @@ class App extends Component {
 
   deleteImage = (id) => {
     console.log('ready to delete', id);
-    //send delete request to server
-  //   axios.delete(`/gallery/${id}`)
-  //   .then((response) => {
-  //     this.getGallery();
-  //   }).catch((error) => {
-  //     console.log(error);
-  //   })
+    // send delete request to server
+    axios.delete(`/gallery/${id}`)
+    .then((response) => {
+      this.getGallery();
+    }).catch((error) => {
+      console.log(error);
+    })
   }
 
   render() {
