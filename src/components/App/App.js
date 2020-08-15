@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList'
+import GalleryForm from '../GalleryForm/GalleryForm.jsx'
 
 class App extends Component {
 
@@ -39,6 +40,11 @@ class App extends Component {
     })
   }
 
+  addImage = (newImage) => {
+    console.log('in addImage');
+    console.log(newImage);
+    
+  }
 
   render() {
     return (
@@ -47,6 +53,7 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br/>
+        <GalleryForm addImage={this.addImage}/>
         <GalleryList galleryList={this.state.galleryList} addLike={this.addLike}/>
       </div>
     );

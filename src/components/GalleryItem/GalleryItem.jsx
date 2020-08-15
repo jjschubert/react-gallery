@@ -17,11 +17,11 @@ class GalleryItem extends Component {
 
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         return (
             <div className='gallery-block'>
                 {this.state.isPhoto ?
-                    <img src={this.props.picture.path} onClick={this.flipView} />
+                    <img src={this.props.picture.path} onClick={this.flipView} alt={this.props.picture.description}/>
                     : <div className='photoDesc' onClick={this.flipView}>
                         <p className='descText'>{this.props.picture.description}</p></div>}
                 <p>This photo has {this.props.picture.likes} likes.</p>
