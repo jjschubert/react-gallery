@@ -71,8 +71,8 @@ x- Move the data into a database (postgresql)
 x - Add a form (new **component**) that allows a user to POST a new gallery item
   - Client side form (use absolute URL for images)
   - Server side route for posting an image
-- Ability to delete a gallery item
-- Add styling with Material-UI [https://material-ui.com/](https://material-ui.com/)
+x - Ability to delete a gallery item
+x - Add styling with Material-UI [https://material-ui.com/](https://material-ui.com/)
 - Implement [uppy](https://uppy.io/) for image upload 
 
 > NOTE: The above stretch goals are intended to be completed in order.
