@@ -43,7 +43,13 @@ class App extends Component {
   addImage = (newImage) => {
     console.log('in addImage');
     console.log(newImage);
-    
+    //send to server
+    axios.post('/gallery', newImage)
+    .then(response => {
+      this.getGallery();
+    }).catch(error => {
+      console.log('post error', error);
+    })
   }
 
   render() {
