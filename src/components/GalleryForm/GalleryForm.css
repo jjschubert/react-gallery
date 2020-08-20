@@ -10,3 +10,9 @@
 #pathInput {
     margin-left: 5em;
 }
+
+#formDiv {
+    background-color: #f0f5f5;
+    height: 75px;
+    padding-top: 1.5em;
+  }
