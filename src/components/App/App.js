@@ -16,9 +16,9 @@ class App extends Component {
     galleryList: []
   }
 
+  //load gallery 
   getGallery = () => {
     console.log('getGallery running');
-
     axios.get('/gallery')
       .then(response => {
         console.log(response.data);
@@ -30,6 +30,7 @@ class App extends Component {
       })
   }
 
+  //send like to server
   addLike = (picture) => {
     console.log('in add like');
     let id = picture.id
@@ -42,6 +43,7 @@ class App extends Component {
       })
   }
 
+  //sends image to server
   addImage = (newImage) => {
     console.log('in addImage');
     console.log(newImage);

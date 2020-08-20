@@ -13,6 +13,7 @@ class GalleryForm extends Component {
         }
     }
 
+    //saves input entry to local state
     handleChangeFor = (event, propertyName) => {
         this.setState({
             newImage: {

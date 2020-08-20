@@ -11,6 +11,7 @@ class GalleryItem extends Component {
         isPhoto: true
     }
 
+    //toggles between photo and description
     flipView = () => {
         this.setState({
             isPhoto: !this.state.isPhoto
@@ -19,7 +20,6 @@ class GalleryItem extends Component {
 
 
     render() {
-        // console.log(this.props);
         return (
             <div className='gallery-block'>
                 {this.state.isPhoto ?
