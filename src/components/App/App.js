@@ -4,7 +4,7 @@ import './App.css';
 import GalleryList from '../GalleryList/GalleryList'
 import GalleryForm from '../GalleryForm/GalleryForm.jsx'
 import Divider from '@material-ui/core/Divider';
-import Typography from '@material-ui/core/Typography';
+import Header from '../Header/Header.jsx';
 
 class App extends Component {
 
@@ -69,20 +69,8 @@ class App extends Component {
     return (
       <div className="App">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-        <header className="App-header">
-
-          <Typography variant="h2">
-            Gallery of My Life
-      </Typography>
-        </header>
-
-      <div id="form">
-        <br />
+        <Header />
         <GalleryForm addImage={this.addImage} />
-        <br />
-        </div>
-
-
         <Divider variant="middle" />
         <GalleryList galleryList={this.state.galleryList}
           addLike={this.addLike}
